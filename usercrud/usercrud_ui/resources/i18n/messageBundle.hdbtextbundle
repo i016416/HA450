@@ -1,0 +1,22 @@
+# i18n support as default language.
+
+#------------------------------------------
+# User Overview Table
+#------------------------------------------
+
+table_personNumber=Person Number
+table_firstName=First Name
+table_lastName=Last Name
+table_email=Email
+
+form_persNo=Person Number
+form_name=Name
+form_email=EMail
+form_action=Action
+form_createNewUser=Create New User
+form_clearForm=Clear Form
+form_deleteUser=Delete User
+form_enterPersNo=Enter Person Number...
+form_enterFirstName=Enter First Name...
+form_enterLastName=Enter Last Name...
+form_enterEmail=Enter E-Mail Address...

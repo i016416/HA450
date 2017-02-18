@@ -1,0 +1,43 @@
+_schema-version: 2.0.0
+ID: usercrud
+version: 0.0.1
+
+modules:
+- name: usercrud_db
+  type: hdb
+  path: usercrud_db
+  requires:
+   - name: hdi-container
+
+
+- name: usercrud_js
+  type: nodejs
+  path: usercrud_js
+
+# ------- dependency on usercrud_db
+  requires:
+    - name: usercrud_db
+    - name: hdi-container
+
+#---------------- exposes SERVICE URL to consumers
+  provides:
+    - name: usercrud_js_api
+      properties:
+        service_url: ${default-url}
+
+
+- name: usercrud_ui
+  type: html5
+  path: usercrud_ui
+
+# -- requires usercrud_js service URL
+  requires:
+    - name: usercrud_js_api
+      group: destinations
+      properties:
+        name: usercrud_js_be
+        url:  ~{service_url}
+
+resources:
+- name: hdi-container
+  type: com.sap.xs.hdi-container

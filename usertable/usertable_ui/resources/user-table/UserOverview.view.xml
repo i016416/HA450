@@ -1,0 +1,35 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="user-table.UserOverview" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Exercise: User Table with JSON binding">
+		<content>
+			<Panel headerText="User Overview">
+				<Table items="{Users>/UserCollection}">
+					<columns>
+						<Column>
+							<Text text="{i18n>table_personNumber}" />
+						</Column>
+						<Column>
+							<Text text="{i18n>table_firstName}" />
+						</Column>
+						<Column>
+							<Text text="{i18n>table_lastName}" />
+						</Column>
+						<Column>
+							<Text text="{i18n>table_email}" />
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectNumber number="{Users>PERS_NO}" />
+								<Text text="{Users>FIRSTNAME}" />
+								<Text text="{Users>LASTNAME}" />
+								<Text text="{Users>E_MAIL}" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</Panel>
+		</content>
+	</Page>
+</core:View>

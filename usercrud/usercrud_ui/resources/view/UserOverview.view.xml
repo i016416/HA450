@@ -1,0 +1,105 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+		controllerName="view.UserOverview" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Exercise: User Table with two-way OData binding">
+		<content>
+			<Panel 
+				headerText="Add User">
+				<f:SimpleForm 
+					minWidth="1024"
+					maxContainerCols="2"
+					editable="true"
+					layout="ResponsiveGridLayout"
+					labelSpanL="4"
+					labelSpanM="2"
+					emptySpanL="4"
+					emptySpanM="2"
+					columnsL="1"
+					columnsM="1">
+					<f:content>
+						<Label text="{i18n>form_persNo}" />
+						<Input
+							id="idInputPersNo"
+							value="{/PERS_NO}"
+							placeholder="{i18n>form_enterPersNo}" />
+						<Label text="{i18n>form_name}" />
+						<Input
+							id="idInputFirstName"
+							value="{/FIRSTNAME}"
+							placeholder="{i18n>form_enterFirstName}">
+							<layoutData>
+								<l:GridData span="L3 M4 S12" />
+							</layoutData>
+						</Input>
+						<Input
+							id="idInputLastName"
+							value="{/LASTNAME}"
+							placeholder="{i18n>form_enterLastName}">
+							<layoutData>
+								<l:GridData span="L3 M4 S12" />
+							</layoutData>
+						</Input>
+						
+						<Label text="{i18n>form_email}" />
+						<Input 
+							id="idInputEmail"
+							value="{/E_MAIL}" 
+							placeholder="{i18n>form_enterEmail}" />
+						
+						<Label text="{i18n>form_action}" />
+						<Button
+							type="Accept"
+							text="{i18n>form_createNewUser}"
+							press="onUserCreatePressed">
+						</Button>
+						<Button
+							type="Reject"
+							text="{i18n>form_clearForm}"
+							press="onFormClear">
+						</Button>
+					</f:content>
+				</f:SimpleForm>
+			</Panel>
+			<Panel headerText="User Overview">
+				<Table 
+					id="idTableUserOverview"
+					mode="SingleSelectMaster"
+					items="{Users>/Users}">
+					<headerToolbar>
+						<Toolbar>
+							<ToolbarSpacer />
+							<Button
+								text="{i18n>form_deleteUser}"
+								icon="sap-icon://delete"
+								press="onUserDelete">
+						</Button>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column>
+							<Text text="{i18n>table_personNumber}" />
+						</Column>
+						<Column>
+							<Text text="{i18n>table_firstName}" />
+						</Column>
+						<Column>
+							<Text text="{i18n>table_lastName}" />
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>table_email}" />
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectNumber number="{Users>PERS_NO}" />
+								<Text text="{Users>FIRSTNAME}" />
+								<Text text="{Users>LASTNAME}" />
+								<Text text="{Users>E_MAIL}" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</Panel>
+		</content>
+	</Page>
+</core:View>

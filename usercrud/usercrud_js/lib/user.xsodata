@@ -1,0 +1,3 @@
+service {
+	"usercrud.usercrud_db::User.Details" as "Users";
+}

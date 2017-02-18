@@ -1,0 +1,10 @@
+# i18n support as default language.
+
+#------------------------------------------
+# User Overview Table
+#------------------------------------------
+
+table_personNumber=Person Number
+table_firstName= First Name
+table_lastName=Last Name
+table_email=Email

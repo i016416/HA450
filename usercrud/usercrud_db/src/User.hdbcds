@@ -1,0 +1,9 @@
+namespace usercrud.usercrud_db;
+context User {
+	Entity Details {
+		key PERS_NO: String(10);
+		FIRSTNAME: String(40);
+		LASTNAME: String(40);
+		E_MAIL: String(255);
+	};	
+};	

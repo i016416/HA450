@@ -1,0 +1,1 @@
+{"type":"sap.hdb","builders":{"default":"hdi-builder","configs":{}},"runners":{"configs":{}},"attributes":{"mta_module_parent":["/usercrud"],"sap.watt.common.setting":["{\"generation\":[{\"templateId\":\"hanatemplates.hanadbproject\",\"templateVersion\":\"1.0.0\",\"dateTimeStamp\":\"Mon, 12 Sep 2016 09:39:32 GMT\"}]}"]},"mixinTypes":["mtamodule"]}

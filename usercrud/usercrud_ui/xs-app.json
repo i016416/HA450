@@ -1,0 +1,8 @@
+{
+	"welcomeFile": "index.html",
+	"authenticationMethod": "none",
+	"routes": [
+		{"source": "^/user.xsodata/.*$", 
+		"destination": "usercrud_js_be"}
+		]
+}
